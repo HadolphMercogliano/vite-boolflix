@@ -9,8 +9,8 @@ export default {
   props: {
     title: String,
     original_title: String,
-    lenguage: String,
-    vote: String,
+    language: String,
+    vote: Number,
   },
   methods: {},
 };

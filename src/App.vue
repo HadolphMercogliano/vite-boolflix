@@ -10,8 +10,18 @@ export default {
     };
   },
   methods: {
+    // funzione che permette la ricerca sia per film che per serie tv
     searchWord(query) {
-      // console.log(query);
+      this.searchForFilms(query);
+      this.searchForSeries(query);
+      console.log(store.resultsFilmList.length);
+      console.log(store.resultsFilmList);
+
+      // todo chiedere perchè la lunghezza dell' array non si aggiorna alla prima richiesta ma solo dopo la prima
+    },
+
+    // funzione per cercare film
+    searchForFilms(query) {
       axios
         .get(
           `https://api.themoviedb.org/3/search/movie?api_key=b5b3eb1160cf9e1e053108e542484195&query=${query}`
@@ -22,13 +32,29 @@ export default {
           // console.log("risposta chiamata ax");
           // console.log(response);
           // console.log("lista primda del caricamento dei dati");
-          // console.log(store.resultsList);
+          // console.log(store.resultsFilmList);
           // console.log("lista dopo caricamento dati");
-          // console.log(store.resultsList);
+          // console.log(store.resultsFilmList);
         });
     },
-    searchForFilms() {},
-    searchForSeries() {},
+
+    // funzione per cercare serie tv
+    searchForSeries(query) {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/search/tv?api_key=b5b3eb1160cf9e1e053108e542484195&query=${query}`
+        )
+        .then((response) => {
+          store.resultsTVShowsList = response.data.results;
+
+          // console.log("risposta chiamata ax");
+          // console.log(response);
+          // console.log("lista primda del caricamento dei dati");
+          // console.log(store.resultsFilmList);
+          // console.log("lista dopo caricamento dati");
+          // console.log(store.resultsFilmList);
+        });
+    },
   },
   components: { MainApp, HeaderApp },
 };

@@ -25,13 +25,13 @@ export default {
           v-for="result in store.resultsFilmList"
           :title="result.title"
           :original_title="result.original_title"
-          :lenguage="result.original_lenguage"
+          :language="result.original_language"
           :vote="result.vote_average" />
       </div>
 
       <!-- Stampa della lista delle serie trovate -->
       <h2
-        v-if="store.resultsTVShowsList.length"
+        v-show="store.resultsTVShowsList.length"
         class="text-center p-3">
         Lista Serie TV
       </h2>
