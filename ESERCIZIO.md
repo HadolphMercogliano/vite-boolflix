@@ -1,18 +1,14 @@
 ## Milestone 0:
 
-- Progettare la struttura dell’app (su carta o digitalmente) sulla linea degli esercizi
-  svolti nei giorni precedenti. Specificare i componenti che si desidera realizzare, la
-  loro gerarchia, le props e gli emits ne regoleranno il funzionamento ed i global states
-  che si intende utilizzare.
+- _DONE_ Progettare la struttura dell’app (su carta o digitalmente) sulla linea degli esercizi svolti nei giorni precedenti. Specificare i componenti che si desidera realizzare, la loro gerarchia, le props e gli emits ne regoleranno il funzionamento ed i global states che si intende utilizzare.
 
 ## Milestone 1:
 
-- Creare un layout base con una searchbar (una input e un button) in cui possiamo
-  scrivere completamente o parzialmente il nome di un film.
+- _DONE_ Creare un layout base con una searchbar (una input e un button) in cui possiamo scrivere completamente o parzialmente il nome di un film.
 
-- Possiamo, cliccando il bottone, cercare sull’API tutti i film che contengono ciò che ha scritto l’utente.
-  Vogliamo dopo la risposta dell’API visualizzare a schermo i seguenti valori per ogni
-  film trovato:
+- _DONE_ Possiamo, cliccando il bottone, cercare sull’API tutti i film che contengono ciò che ha scritto l’utente.
+
+- _DONE_ Vogliamo dopo la risposta dell’API visualizzare a schermo i seguenti valori per ogni film trovato:
 
 1. **Titolo**
 2. **Titolo Originale**
