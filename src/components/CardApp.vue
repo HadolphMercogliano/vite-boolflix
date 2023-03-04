@@ -4,21 +4,26 @@ export default {
   data() {
     return {
       store,
-      message: "ciao CardApp",
     };
+  },
+  props: {
+    title: String,
+    original_title: String,
+    lenguage: String,
+    vote: String,
   },
   methods: {},
 };
 </script>
 <template>
-  <div
-    v-for="result in store.resultsList"
-    class="card">
+  <div class="card">
     <div class="card-body">
-      <h5 class="card-title">{{ result.title }}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{ result.original_title }}</h6>
-      <p class="card-text">LENGUAGE: {{ result.original_language }}</p>
-      <p class="card-text">VOTE: {{ result.vote_average }}</p>
+      <h5 class="card-title">{{ title }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        {{ original_title }}
+      </h6>
+      <p class="card-text">LENGUAGE: {{ language }}</p>
+      <p class="card-text">VOTE: {{ vote }}</p>
     </div>
   </div>
 </template>

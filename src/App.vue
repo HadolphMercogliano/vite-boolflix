@@ -17,16 +17,18 @@ export default {
           `https://api.themoviedb.org/3/search/movie?api_key=b5b3eb1160cf9e1e053108e542484195&query=${query}`
         )
         .then((response) => {
-          console.log("risposta chiamata ax");
-          console.log(response);
+          store.resultsFilmList = response.data.results;
 
-          console.log("lista primda del caricamento dei dati");
-          console.log(store.resultsList);
-          store.resultsList = response.data.results;
-          console.log("lista dopo caricamento dati");
-          console.log(store.resultsList);
+          // console.log("risposta chiamata ax");
+          // console.log(response);
+          // console.log("lista primda del caricamento dei dati");
+          // console.log(store.resultsList);
+          // console.log("lista dopo caricamento dati");
+          // console.log(store.resultsList);
         });
     },
+    searchForFilms() {},
+    searchForSeries() {},
   },
   components: { MainApp, HeaderApp },
 };
