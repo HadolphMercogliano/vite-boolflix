@@ -18,8 +18,8 @@ export default {
       store.resultsTVShowsList = [];
       this.searchForFilms(query);
       this.searchForSeries(query);
-      console.log(store.resultsFilmList.length);
-      console.log(store.resultsFilmList);
+      // console.log(store.resultsFilmList.length);
+      // console.log(store.resultsFilmList);
     },
 
     // funzione per cercare film
@@ -33,11 +33,7 @@ export default {
           if (store.resultsFilmList.length > 0) {
             store.FilmFound = true;
           }
-          for (let i = 0; i < store.resultsFilmList.length; i++) {
-            store.resultsFilmList[i].original_language = this.searchFlag(
-              store.resultsFilmList[i].original_language
-            );
-          }
+          this.searchFlag(store.resultsFilmList);
         });
     },
 
@@ -52,19 +48,25 @@ export default {
           if (store.resultsTVShowsList.length > 0) {
             store.TVShowsFound = true;
           }
-          for (let i = 0; i < store.resultsTVShowsList.length; i++) {
-            store.resultsTVShowsList[i].original_language = this.searchFlag(
-              store.resultsTVShowsList[i].original_language
-            );
-          }
+          this.searchFlag(store.resultsTVShowsList);
         });
     },
     //funzione per cambiare la stringa lenguage in una bandiera
-    searchFlag(lenguage) {
-      if (lenguage === "en") return "https://flagsapi.com/GB/shiny/32.png";
-      if (lenguage === "ja") return "https://flagsapi.com/JP/shiny/32.png";
-      if (lenguage === "ko") return "https://flagsapi.com/KR/shiny/32.png";
-      return "https://flagsapi.com/" + lenguage.toUpperCase() + "/shiny/32.png";
+    searchFlag(list) {
+      for (let i = 0; i < list.length; i++) {
+        if (list[i].original_language === "en") {
+          list[i].original_language = "https://flagsapi.com/GB/shiny/32.png";
+        } else if (list[i].original_language === "ja") {
+          list[i].original_language = "https://flagsapi.com/JP/shiny/32.png";
+        } else if (list[i].original_language === "ko") {
+          list[i].original_language = "https://flagsapi.com/KR/shiny/32.png";
+        } else {
+          list[i].original_language =
+            "https://flagsapi.com/" +
+            list[i].original_language.toUpperCase() +
+            "/shiny/32.png";
+        }
+      }
     },
   },
   components: { MainApp, HeaderApp },

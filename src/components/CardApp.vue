@@ -34,6 +34,7 @@ export default {
           <img
             :src="language"
             alt="" />
+          <!-- {{ language }} -->
         </div>
         <p class="card-text">VOTE: {{ vote }}</p>
       </div>
