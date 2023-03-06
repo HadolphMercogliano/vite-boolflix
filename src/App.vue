@@ -18,8 +18,6 @@ export default {
       store.resultsTVShowsList = [];
       this.searchForFilms(query);
       this.searchForSeries(query);
-      // console.log(store.resultsFilmList.length);
-      // console.log(store.resultsFilmList);
     },
 
     // funzione per cercare film
@@ -34,6 +32,7 @@ export default {
             store.FilmFound = true;
           }
           this.searchFlag(store.resultsFilmList);
+          this.voteScale(store.resultsFilmList);
         });
     },
 
@@ -49,6 +48,7 @@ export default {
             store.TVShowsFound = true;
           }
           this.searchFlag(store.resultsTVShowsList);
+          this.voteScale(store.resultsTVShowsList);
         });
     },
     //funzione per cambiare la stringa lenguage in una bandiera
@@ -66,6 +66,13 @@ export default {
             list[i].original_language.toUpperCase() +
             "/shiny/32.png";
         }
+      }
+    },
+
+    //funzione per cambiare scala di voto
+    voteScale(list) {
+      for (let i = 0; i < list.length; i++) {
+        list[i].vote_average = parseInt(list[i].vote_average / 2);
       }
     },
   },

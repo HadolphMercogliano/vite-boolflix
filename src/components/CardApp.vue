@@ -24,7 +24,7 @@ export default {
           :src="store.ImgPath + image"
           alt="" />
       </div>
-      <div class="card-body">
+      <div class="card-body d-flex flex-column justify-content-between">
         <h5 class="card-title">{{ title }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">
           {{ original_title }}
@@ -33,10 +33,15 @@ export default {
           <span class="card-text pe-2">LENGUAGE: </span>
           <img
             :src="language"
-            alt="" />
+            alt="unknown" />
           <!-- {{ language }} -->
         </div>
-        <p class="card-text">VOTE: {{ vote }}</p>
+        <div class="d-flex">
+          <p class="card-text pe-1">VOTE:</p>
+          <span v-for="vote in vote">
+            <font-awesome-icon icon="fa-solid fa-star" />
+          </span>
+        </div>
       </div>
     </div>
   </div>
