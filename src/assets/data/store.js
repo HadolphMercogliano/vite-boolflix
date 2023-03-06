@@ -4,4 +4,6 @@ export const store = reactive({
   resultsTVShowsList: [],
   TVShowsFound: false,
   FilmFound: false,
+  //path base per le immagini
+  ImgPath: "https://image.tmdb.org/t/p/w342/",
 });

@@ -35,13 +35,7 @@ export default {
           if (store.resultsFilmList.length > 0) {
             store.FilmFound = true;
           }
-
-          // console.log("risposta chiamata ax");
-          // console.log(response);
-          // console.log("lista primda del caricamento dei dati");
-          // console.log(store.resultsFilmList);
-          // console.log("lista dopo caricamento dati");
-          // console.log(store.resultsFilmList);
+          console.log(store.FilmFound);
         });
     },
 
@@ -56,13 +50,20 @@ export default {
           if (store.resultsTVShowsList.length > 0) {
             store.TVShowsFound = true;
           }
-          // console.log("risposta chiamata ax");
-          // console.log(response);
-          // console.log("lista primda del caricamento dei dati");
-          // console.log(store.resultsFilmList);
-          // console.log("lista dopo caricamento dati");
-          // console.log(store.resultsFilmList);
+          for (let i = 0; i < store.resultsTVShowsList.length; i++) {
+            console.log(store.resultsTVShowsList.length);
+            console.log(store.resultsTVShowsList[i].name);
+          }
+
+          // this.searchFlag(store.resultsTVShowsList.original_language);
+          // console.log(store.resultsTVShowsList[i]);
         });
+    },
+    //funzione per cambiare la stringa lenguage in una bandiera
+    searchFlag(lenguage) {
+      if (lenguage == "en") return "https://flagsapi.com/GB/shiny/32.png";
+      if (lenguage == "ja") return "https://flagsapi.com/JP/shiny/32.png";
+      return `https://flagsapi.com/${lenguage.toUpperCase()}/shiny/32.png`;
     },
   },
   components: { MainApp, HeaderApp },

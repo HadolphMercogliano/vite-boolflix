@@ -20,9 +20,10 @@ export default {
         class="text-center p-3">
         Lista Film
       </h2>
-      <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+      <div class="row justify-content-center">
         <CardApp
           v-for="result in store.resultsFilmList"
+          :image="result.poster_path"
           :title="result.title"
           :original_title="result.original_title"
           :language="result.original_language"
@@ -36,9 +37,10 @@ export default {
         Lista Serie TV
       </h2>
 
-      <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+      <div class="row">
         <CardApp
           v-for="result in store.resultsTVShowsList"
+          :image="result.backdrop_path"
           :title="result.name"
           :original_title="result.original_name"
           :language="result.original_language"
@@ -52,5 +54,8 @@ export default {
 main {
   min-height: 100vh;
   color: white;
+}
+.row {
+  row-gap: 15px;
 }
 </style>

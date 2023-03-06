@@ -19,7 +19,7 @@
 
 - Trasformiamo la stringa statica della lingua in una vera e propria bandiera della nazione corrispondente, gestendo il caso in cui non abbiamo la bandiera della nazione ritornata dall’API (le flag non ci sono in FontAwesome).
 
-- Allarghiamo poi la ricerca anche alle serie tv. Con la stessa azione di ricerca dovremo prendere sia i film che corrispondono alla query, sia le serie tv, stando attenti ad avere alla fine dei valori simili (le serie e i film hanno campi nel JSON di risposta diversi, simili ma non sempre identici)
+- _DONE_ Allarghiamo poi la ricerca anche alle serie tv. Con la stessa azione di ricerca dovremo prendere sia i film che corrispondono alla query, sia le serie tv, stando attenti ad avere alla fine dei valori simili (le serie e i film hanno campi nel JSON di risposta diversi, simili ma non sempre identici)
 
   Qui un esempio di chiamata per le serie tv:
   https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=s
@@ -42,7 +42,7 @@
 
 - Trasformiamo quello che abbiamo fatto fino ad ora in una vera e propria webapp, creando un layout completo simil-Netflix:
 
-      + Un header che contiene logo e search bar
+      + _DONE_ Un header che contiene logo e search bar
 
       + Dopo aver ricercato qualcosa nella searchbar, i risultati appaiono sotto forma
         di “card” in cui lo sfondo è rappresentato dall’immagine di copertina (consiglio
