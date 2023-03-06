@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  min-height: 100vh;
+  min-height: 80vh;
   color: white;
 }
 .row {

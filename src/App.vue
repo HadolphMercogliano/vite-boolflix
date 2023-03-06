@@ -20,8 +20,6 @@ export default {
       this.searchForSeries(query);
       console.log(store.resultsFilmList.length);
       console.log(store.resultsFilmList);
-
-      // todo chiedere perchè la lunghezza dell' array non si aggiorna alla prima richiesta ma solo dopo la prima
     },
 
     // funzione per cercare film
@@ -35,7 +33,11 @@ export default {
           if (store.resultsFilmList.length > 0) {
             store.FilmFound = true;
           }
-          console.log(store.FilmFound);
+          for (let i = 0; i < store.resultsFilmList.length; i++) {
+            store.resultsFilmList[i].original_language = this.searchFlag(
+              store.resultsFilmList[i].original_language
+            );
+          }
         });
     },
 
@@ -51,19 +53,18 @@ export default {
             store.TVShowsFound = true;
           }
           for (let i = 0; i < store.resultsTVShowsList.length; i++) {
-            console.log(store.resultsTVShowsList.length);
-            console.log(store.resultsTVShowsList[i].name);
+            store.resultsTVShowsList[i].original_language = this.searchFlag(
+              store.resultsTVShowsList[i].original_language
+            );
           }
-
-          // this.searchFlag(store.resultsTVShowsList.original_language);
-          // console.log(store.resultsTVShowsList[i]);
         });
     },
     //funzione per cambiare la stringa lenguage in una bandiera
     searchFlag(lenguage) {
-      if (lenguage == "en") return "https://flagsapi.com/GB/shiny/32.png";
-      if (lenguage == "ja") return "https://flagsapi.com/JP/shiny/32.png";
-      return `https://flagsapi.com/${lenguage.toUpperCase()}/shiny/32.png`;
+      if (lenguage === "en") return "https://flagsapi.com/GB/shiny/32.png";
+      if (lenguage === "ja") return "https://flagsapi.com/JP/shiny/32.png";
+      if (lenguage === "ko") return "https://flagsapi.com/KR/shiny/32.png";
+      return "https://flagsapi.com/" + lenguage.toUpperCase() + "/shiny/32.png";
     },
   },
   components: { MainApp, HeaderApp },

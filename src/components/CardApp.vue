@@ -29,10 +29,12 @@ export default {
         <h6 class="card-subtitle mb-2 text-muted">
           {{ original_title }}
         </h6>
-        <p class="card-text">LENGUAGE: {{ language }}</p>
-        <img
-          :src="language"
-          alt="" />
+        <div class="d-flex align-items-center">
+          <span class="card-text pe-2">LENGUAGE: </span>
+          <img
+            :src="language"
+            alt="" />
+        </div>
         <p class="card-text">VOTE: {{ vote }}</p>
       </div>
     </div>
@@ -42,10 +44,15 @@ export default {
 <style lang="scss" scoped>
 .card {
   color: black;
+  border: black;
+  img {
+    border-top-right-radius: var(--bs-card-border-radius);
+    border-top-left-radius: var(--bs-card-border-radius);
+  }
 }
 .card-img {
   img {
-    max-width: 100%;
+    width: 100%;
   }
 }
 </style>
