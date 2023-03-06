@@ -16,7 +16,7 @@ export default {
     <div class="container">
       <!-- Stampa della lista dei film trovati -->
       <h2
-        v-if="store.resultsFilmList.length"
+        v-if="store.FilmFound"
         class="text-center p-3">
         Lista Film
       </h2>
@@ -31,7 +31,7 @@ export default {
 
       <!-- Stampa della lista delle serie trovate -->
       <h2
-        v-show="store.resultsTVShowsList.length"
+        v-if="store.TVShowsFound"
         class="text-center p-3">
         Lista Serie TV
       </h2>
@@ -39,9 +39,9 @@ export default {
       <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
         <CardApp
           v-for="result in store.resultsTVShowsList"
-          :title="result.title"
-          :original_title="result.original_title"
-          :lenguage="result.original_lenguage"
+          :title="result.name"
+          :original_title="result.original_name"
+          :language="result.original_language"
           :vote="result.vote_average" />
       </div>
     </div>

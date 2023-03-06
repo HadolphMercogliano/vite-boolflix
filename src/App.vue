@@ -12,6 +12,10 @@ export default {
   methods: {
     // funzione che permette la ricerca sia per film che per serie tv
     searchWord(query) {
+      store.FilmFound = false;
+      store.TVShowsFound = false;
+      store.resultsFilmList = [];
+      store.resultsTVShowsList = [];
       this.searchForFilms(query);
       this.searchForSeries(query);
       console.log(store.resultsFilmList.length);
@@ -28,6 +32,9 @@ export default {
         )
         .then((response) => {
           store.resultsFilmList = response.data.results;
+          if (store.resultsFilmList.length > 0) {
+            store.FilmFound = true;
+          }
 
           // console.log("risposta chiamata ax");
           // console.log(response);
@@ -46,7 +53,9 @@ export default {
         )
         .then((response) => {
           store.resultsTVShowsList = response.data.results;
-
+          if (store.resultsTVShowsList.length > 0) {
+            store.TVShowsFound = true;
+          }
           // console.log("risposta chiamata ax");
           // console.log(response);
           // console.log("lista primda del caricamento dei dati");
