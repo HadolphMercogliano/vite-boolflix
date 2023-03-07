@@ -45,6 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
+  height: 90px;
   background-color: black;
   .container-fluid {
     flex-wrap: nowrap;

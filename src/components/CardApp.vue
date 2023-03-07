@@ -25,9 +25,9 @@ export default {
           :src="store.ImgPath + image"
           alt="" />
       </div>
-      <div class="card-body d-block">
-        <div class="d-flex h-100 flex-column justify-content-center">
-          <h5 class="h-3 card-title">{{ title }}</h5>
+      <div class="card-body">
+        <div class="d-flex flex-column justify-content-center">
+          <h4 class="card-title">{{ title }}</h4>
           <h6 class="card-subtitle mb-2 text-muted">
             {{ original_title }}
           </h6>

@@ -15,11 +15,11 @@ export default {
   <main class="bg-dark pb-4">
     <div class="container">
       <!-- Stampa della lista dei film trovati -->
-      <h2
+      <h1
         v-if="store.FilmFound"
         class="text-center p-3">
         Lista Film
-      </h2>
+      </h1>
       <div class="row justify-content-center">
         <CardApp
           v-for="result in store.resultsFilmList"
@@ -32,11 +32,11 @@ export default {
       </div>
 
       <!-- Stampa della lista delle serie trovate -->
-      <h2
+      <h1
         v-if="store.TVShowsFound"
         class="text-center p-3">
         Lista Serie TV
-      </h2>
+      </h1>
 
       <div class="row">
         <CardApp
@@ -54,7 +54,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  min-height: 80vh;
+  min-height: calc(100vh - 90px);
   color: white;
 }
 .row {
