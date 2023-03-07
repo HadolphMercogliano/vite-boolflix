@@ -5,14 +5,14 @@ import { store } from "../assets/data/store";
 export default {
   data() {
     return {
-      store,
+      store, //store va nei data solo quando dobbiamo usarlo nel template
     };
   },
   components: { CardApp },
 };
 </script>
 <template>
-  <main class="bg-dark">
+  <main class="bg-dark pb-4">
     <div class="container">
       <!-- Stampa della lista dei film trovati -->
       <h2
@@ -27,7 +27,8 @@ export default {
           :title="result.title"
           :original_title="result.original_title"
           :language="result.original_language"
-          :vote="result.vote_average" />
+          :vote="result.vote_average"
+          :overview="result.overview" />
       </div>
 
       <!-- Stampa della lista delle serie trovate -->
@@ -40,11 +41,12 @@ export default {
       <div class="row">
         <CardApp
           v-for="result in store.resultsTVShowsList"
-          :image="result.backdrop_path"
+          :image="result.poster_path"
           :title="result.name"
           :original_title="result.original_name"
           :language="result.original_language"
-          :vote="result.vote_average" />
+          :vote="result.vote_average"
+          :overview="result.overview" />
       </div>
     </div>
   </main>

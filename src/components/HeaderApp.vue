@@ -32,7 +32,6 @@ export default {
             type="search"
             placeholder="Search"
             aria-label="Search" />
-          <!-- @click="" -->
           <button
             class="btn btn-danger"
             type="submit">

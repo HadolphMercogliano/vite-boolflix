@@ -72,7 +72,7 @@ export default {
     //funzione per cambiare scala di voto
     voteScale(list) {
       for (let i = 0; i < list.length; i++) {
-        list[i].vote_average = parseInt(list[i].vote_average / 2);
+        list[i].vote_average = Math.ceil(list[i].vote_average / 2);
       }
     },
   },
